@@ -14,10 +14,11 @@ return new class extends Migration
         Schema::create('attachments', function (Blueprint $table) {
             $table->id();
             $table->morphs('attachable');
-            $table->string('file_path');
-            $table->string('file_name');
-            $table->string('file_type');
-            $table->integer('file_size')->unsigned();
+            $table->string('path');
+            $table->string('name');
+            $table->string('type');
+            $table->string('attachment_type');
+            $table->integer('size')->unsigned();
             $table->timestamps();
         });
     }

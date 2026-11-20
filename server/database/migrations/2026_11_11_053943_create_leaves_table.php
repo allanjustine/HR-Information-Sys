@@ -17,6 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignIdFor(LeaveCategory::class)->nullable()->constrained()->nullOnDelete();
             $table->foreignIdFor(User::class)->nullable()->constrained()->nullOnDelete();
+            $table->foreignIdFor(User::class, 'current_approver_id')->constrained()->cascadeOnDelete();
             $table->date('start_date');
             $table->date('end_date');
             $table->text('reason');
